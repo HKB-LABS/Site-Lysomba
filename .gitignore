@@ -1,0 +1,16 @@
+node_modules
+.next
+out
+*.log
+.DS_Store
+
+# Variables d'environnement (ne jamais committer)
+.env
+.env.*
+!.env.example
+
+# Vercel
+.vercel
+
+# Fichiers de design (référence, runtime propriétaire — non déployés)
+design/support.js

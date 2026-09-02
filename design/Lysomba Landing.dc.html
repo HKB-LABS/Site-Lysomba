@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lysomba — Vos courses, triées par rayon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; background: #FBFBFD; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #171A2E; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, .disp { font-family: 'Nunito', system-ui, sans-serif; letter-spacing: -0.02em; text-wrap: balance; }
+  p { text-wrap: pretty; }
+  a { color: #4B57D8; text-decoration: none; }
+  a:hover { color: #3843B8; }
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+</style>
+</helmet>
+
+<div style="width:100%; overflow-x:hidden">
+
+  <header style="position:sticky; top:0; z-index:50; background:rgba(251,251,253,0.85); backdrop-filter:blur(14px); border-bottom:1px solid rgba(23,26,46,0.07)">
+    <div style="max-width:1180px; margin:0 auto; padding:14px 28px; display:flex; flex-wrap:wrap; align-items:center; gap:12px 14px">
+      <img src="uploads/lysomba_icon_master.png" alt="Lysomba" style="width:40px; height:40px; border-radius:11px; display:block" />
+      <span class="disp" style="font-size:22px; font-weight:900; color:#171A2E">Lysomba</span>
+      <nav style="margin-left:auto; display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-end; gap:12px 22px">
+        <sc-if value="{{ isFr }}" hint-placeholder-val="{{ true }}">
+          <a href="#fonctionnalites" style="font-size:15px; font-weight:600; color:#4A4F6B">Fonctionnalités</a>
+          <a href="#comment" style="font-size:15px; font-weight:600; color:#4A4F6B">Comment ça marche</a>
+          <a href="#faq" style="font-size:15px; font-weight:600; color:#4A4F6B">FAQ</a>
+        </sc-if>
+        <sc-if value="{{ isEn }}" hint-placeholder-val="{{ false }}">
+          <a href="#features" style="font-size:15px; font-weight:600; color:#4A4F6B">Features</a>
+          <a href="#how" style="font-size:15px; font-weight:600; color:#4A4F6B">How it works</a>
+          <a href="#faq-en" style="font-size:15px; font-weight:600; color:#4A4F6B">FAQ</a>
+        </sc-if>
+        <div style="display:flex; align-items:center; padding:3px; border-radius:999px; background:#EEF0FE; border:1px solid rgba(75,87,216,0.16)">
+          <button type="button" onClick="{{ setFr }}" style="{{ frTabStyle }}">FR</button>
+          <button type="button" onClick="{{ setEn }}" style="{{ enTabStyle }}">EN</button>
+        </div>
+        <sc-if value="{{ isFr }}" hint-placeholder-val="{{ true }}">
+          <a href="#telecharger" style="display:inline-flex; align-items:center; padding:11px 22px; border-radius:999px; background:#4B57D8; color:#fff; font-weight:700; font-size:15px; box-shadow:0 8px 20px -8px rgba(75,87,216,0.7)" style-hover="background:#3843B8; color:#fff">Télécharger</a>
+        </sc-if>
+        <sc-if value="{{ isEn }}" hint-placeholder-val="{{ false }}">
+          <a href="#download" style="display:inline-flex; align-items:center; padding:11px 22px; border-radius:999px; background:#4B57D8; color:#fff; font-weight:700; font-size:15px; box-shadow:0 8px 20px -8px rgba(75,87,216,0.7)" style-hover="background:#3843B8; color:#fff">Download</a>
+        </sc-if>
+      </nav>
+    </div>
+  </header>
+
+  <sc-if value="{{ isFr }}" hint-placeholder-val="{{ true }}">
+  <div>
+  <section style="position:relative; background:#F5F5FA; background-image:repeating-linear-gradient(90deg, rgba(23,26,46,0.05) 0 1px, transparent 1px 46px); color:#171A2E; border-bottom:1px solid rgba(23,26,46,0.08); overflow:hidden">
+    <div style="max-width:1180px; margin:0 auto; padding:88px 28px 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:48px; align-items:end">
+      <div style="padding-bottom:110px; min-width:0">
+        <div style="display:inline-flex; align-items:center; gap:10px; padding:8px 16px 8px 12px; border-radius:999px; background:#fff; border:1px solid rgba(23,26,46,0.09); box-shadow:0 4px 14px -8px rgba(23,26,46,0.3); margin-bottom:26px">
+          <span style="width:8px; height:8px; border-radius:50%; background:#94C40C; display:block"></span>
+          <span style="font-size:13.5px; font-weight:600; letter-spacing:0.01em; color:#3D4260">Une application <a href="https://britomyck.github.io/HKB-Labs-site/index.html" target="_blank" rel="noopener" style="color:#4B57D8; font-weight:700" style-hover="color:#3843B8">HKB Labs</a> · Android</span>
+        </div>
+        <h1 style="font-size:clamp(38px,7vw,64px); line-height:1.02; font-weight:900; margin:0 0 22px">Vos courses,<br />triées <span style="color:#4B57D8">par rayon</span>.</h1>
+        <p style="font-size:20px; line-height:1.55; color:#585E7A; margin:0 0 34px; max-width:480px">Lysomba classe automatiquement chaque article dans le bon rayon de votre magasin. Un seul passage dans les allées, et le total qui se calcule tout seul.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:14px; margin-bottom:26px">
+          <a href="#telecharger" style="display:inline-flex; align-items:center; gap:12px; padding:17px 30px; border-radius:16px; background:#4B57D8; color:#fff; font-weight:800; font-size:17px; font-family:'Nunito',sans-serif; box-shadow:0 16px 32px -14px rgba(75,87,216,0.85)" style-hover="background:#3843B8; color:#fff">Télécharger sur Google Play</a>
+          <a href="#telecharger" style="display:inline-flex; align-items:center; gap:12px; padding:17px 30px; border-radius:16px; background:#fff; border:1px solid rgba(23,26,46,0.12); color:#3D4260; font-weight:700; font-size:17px; font-family:'Nunito',sans-serif" style-hover="background:#F0F1F9; color:#171A2E">Bientôt sur iOS</a>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px 22px; font-size:14px; font-weight:600; color:#7A8098">
+          <span>Gratuit</span><span style="opacity:0.4">·</span><span>Sans inscription</span><span style="opacity:0.4">·</span><span>Hors ligne</span><span style="opacity:0.4">·</span><span>Français &amp; English</span>
+        </div>
+      </div>
+      <div style="position:relative; display:flex; justify-content:center; align-items:flex-end">
+        <div style="position:absolute; bottom:-40px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(75,87,216,0.16), transparent 66%)"></div>
+        <div style="position:absolute; left:-28px; top:96px; z-index:3; background:#fff; color:#171A2E; border-radius:16px; padding:14px 18px; border:1px solid rgba(23,26,46,0.07); box-shadow:0 22px 44px -18px rgba(23,26,46,0.4); animation:floaty 5s ease-in-out infinite">
+          <div style="font-size:11px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#8A8FA8; margin-bottom:4px">Total en direct</div>
+          <div class="disp" style="font-size:24px; font-weight:900; color:#4B57D8">45,70 €</div>
+        </div>
+        <img src="assets/screen-rayons.png" alt="Liste triée par rayon dans Lysomba" style="position:relative; z-index:2; width:min(330px,78vw); display:block; border-radius:36px; box-shadow:0 46px 80px -32px rgba(23,26,46,0.5)" />
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#171A2E; color:#fff; padding:26px 28px">
+    <div style="max-width:1180px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px 40px">
+      <span class="disp" style="font-size:16px; font-weight:700; color:rgba(255,255,255,0.55)">Tri automatique par rayon</span>
+      <span class="disp" style="font-size:16px; font-weight:700; color:rgba(255,255,255,0.55)">Magasins personnalisés</span>
+      <span class="disp" style="font-size:16px; font-weight:700; color:rgba(255,255,255,0.55)">Prix &amp; total en direct</span>
+      <span class="disp" style="font-size:16px; font-weight:700; color:rgba(255,255,255,0.55)">Modèles réutilisables</span>
+      <span class="disp" style="font-size:16px; font-weight:700; color:rgba(255,255,255,0.55)">Français &amp; English</span>
+    </div>
+  </section>
+
+  <section id="fonctionnalites" style="max-width:1180px; margin:0 auto; padding:104px 28px 40px">
+    <div style="max-width:640px; margin-bottom:56px">
+      <div style="font-size:12.5px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#4B57D8; margin-bottom:16px">Fonctionnalités</div>
+      <h2 style="font-size:clamp(30px,4.5vw,46px); line-height:1.08; font-weight:900; margin:0 0 18px">Pensée pour la vraie vie du chariot</h2>
+      <p style="font-size:18px; line-height:1.6; color:#585E7A; margin:0">Pas de compte à créer, pas de tutoriel de dix minutes. Vous ajoutez, l'application range.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px">
+      <div style="background:#fff; border:1px solid rgba(23,26,46,0.08); border-radius:24px; padding:32px" style-hover="border-color:#4B57D8; transform:translateY(-3px)">
+        <div style="width:44px; height:44px; border-radius:13px; background:#EEF0FE; display:flex; align-items:center; justify-content:center; margin-bottom:22px">
+          <span style="display:block; width:16px; height:9px; border-left:3.5px solid #4B57D8; border-bottom:3.5px solid #4B57D8; transform:rotate(-45deg) translate(1px,-2px)"></span>
+        </div>
+        <h3 style="font-size:21px; font-weight:800; margin:0 0 10px">Chaque article à son rayon</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#585E7A; margin:0">Fruits et légumes, boucherie, épicerie salée… vos articles se regroupent tout seuls dans l'ordre du magasin.</p>
+      </div>
+      <div style="background:#fff; border:1px solid rgba(23,26,46,0.08); border-radius:24px; padding:32px" style-hover="border-color:#4B57D8; transform:translateY(-3px)">
+        <div style="width:44px; height:44px; border-radius:13px; background:#F2FBDB; display:flex; align-items:center; justify-content:center; margin-bottom:22px">
+          <span class="disp" style="font-size:17px; font-weight:900; color:#6E9105">€</span>
+        </div>
+        <h3 style="font-size:21px; font-weight:800; margin:0 0 10px">Le budget sous contrôle</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#585E7A; margin:0">Notez un prix, et le total se met à jour à chaque article. Vous voyez aussi ce qui est déjà dans le chariot.</p>
+      </div>
+      <div style="background:#fff; border:1px solid rgba(23,26,46,0.08); border-radius:24px; padding:32px" style-hover="border-color:#4B57D8; transform:translateY(-3px)">
+        <div style="width:44px; height:44px; border-radius:13px; background:#EEF0FE; display:flex; flex-direction:column; gap:3px; align-items:center; justify-content:center; margin-bottom:22px">
+          <span style="display:block; width:18px; height:3px; border-radius:2px; background:#4B57D8"></span>
+          <span style="display:block; width:18px; height:3px; border-radius:2px; background:#4B57D8"></span>
+          <span style="display:block; width:11px; height:3px; border-radius:2px; background:#B9BEEF"></span>
+        </div>
+        <h3 style="font-size:21px; font-weight:800; margin:0 0 10px">Autant de listes que besoin</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#585E7A; margin:0">Les courses de la semaine, l'apéro de samedi, la liste du drive : chacune son magasin, chacune son total.</p>
+      </div>
+      <div style="background:#fff; border:1px solid rgba(23,26,46,0.08); border-radius:24px; padding:32px" style-hover="border-color:#4B57D8; transform:translateY(-3px)">
+        <div style="width:44px; height:44px; border-radius:13px; background:#F2FBDB; display:flex; align-items:center; justify-content:center; margin-bottom:22px">
+          <span class="disp" style="font-size:13px; font-weight:900; color:#6E9105">FR&nbsp;/&nbsp;EN</span>
+        </div>
+        <h3 style="font-size:21px; font-weight:800; margin:0 0 10px">En français et en anglais</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#585E7A; margin:0">L'application suit la langue de votre téléphone : interface et noms de rayons en français ou en anglais.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1180px; margin:0 auto; padding:64px 28px">
+    <div style="background:#F1F2FB; border-radius:36px; padding:64px 28px 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:48px; align-items:end; overflow:hidden">
+      <div style="padding:0 20px 76px 40px; min-width:0">
+        <div style="font-size:12.5px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#4B57D8; margin-bottom:16px">Vos magasins</div>
+        <h2 style="font-size:clamp(28px,4.2vw,42px); line-height:1.1; font-weight:900; margin:0 0 20px">Votre supermarché n'a pas le même plan que le mien</h2>
+        <p style="font-size:17.5px; line-height:1.65; color:#585E7A; margin:0 0 30px">Enregistrez vos magasins et l'ordre de leurs rayons. Lysomba trie ensuite votre liste dans l'ordre exact de votre parcours — du premier rayon à la caisse.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px">
+          <span style="padding:9px 16px; border-radius:999px; background:#fff; border:1px solid rgba(23,26,46,0.09); font-size:14px; font-weight:600; color:#3D4260">Fruits et Légumes</span>
+          <span style="padding:9px 16px; border-radius:999px; background:#4B57D8; font-size:14px; font-weight:600; color:#fff">Boucherie</span>
+          <span style="padding:9px 16px; border-radius:999px; background:#fff; border:1px solid rgba(23,26,46,0.09); font-size:14px; font-weight:600; color:#3D4260">Produits Laitiers</span>
+          <span style="padding:9px 16px; border-radius:999px; background:#fff; border:1px solid rgba(23,26,46,0.09); font-size:14px; font-weight:600; color:#3D4260">Épicerie Salée</span>
+          <span style="padding:9px 16px; border-radius:999px; background:#fff; border:1px solid rgba(23,26,46,0.09); font-size:14px; font-weight:600; color:#3D4260">Boulangerie</span>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:center; align-items:flex-end">
+        <img src="assets/screen-listes.png" alt="Écran Mes listes de Lysomba" style="width:min(306px,78vw); display:block; border-radius:34px; box-shadow:0 40px 70px -28px rgba(23,26,46,0.42); transform:translateY(6px)" />
+      </div>
+    </div>
+  </section>
+
+  <section id="comment" style="max-width:1180px; margin:0 auto; padding:56px 28px 96px">
+    <h2 style="font-size:clamp(28px,4.2vw,42px); font-weight:900; margin:0 0 52px; text-align:center">Trois gestes, et c'est parti</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px">
+      <div style="border-top:3px solid #4B57D8; padding-top:26px">
+        <div class="disp" style="font-size:15px; font-weight:900; color:#4B57D8; margin-bottom:12px">01</div>
+        <h3 style="font-size:22px; font-weight:800; margin:0 0 10px">Créez votre liste</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#585E7A; margin:0">Nommez-la, choisissez le magasin, ou partez d'un de vos modèles.</p>
+      </div>
+      <div style="border-top:3px solid #B5E619; padding-top:26px">
+        <div class="disp" style="font-size:15px; font-weight:900; color:#7E9F10; margin-bottom:12px">02</div>
+        <h3 style="font-size:22px; font-weight:800; margin:0 0 10px">Ajoutez vos articles</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#585E7A; margin:0">Quantité, prix si vous voulez. Le rayon est deviné à la saisie.</p>
+      </div>
+      <div style="border-top:3px solid rgba(23,26,46,0.15); padding-top:26px">
+        <div class="disp" style="font-size:15px; font-weight:900; color:#171A2E; margin-bottom:12px">03</div>
+        <h3 style="font-size:22px; font-weight:800; margin:0 0 10px">Cochez en magasin</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#585E7A; margin:0">Vous suivez les rayons dans l'ordre, le total se met à jour.</p>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showFaq }}" hint-placeholder-val="{{ true }}">
+    <section id="faq" style="background:#fff; border-top:1px solid rgba(23,26,46,0.07); border-bottom:1px solid rgba(23,26,46,0.07)">
+      <div style="max-width:900px; margin:0 auto; padding:88px 28px">
+        <h2 style="font-size:clamp(27px,4vw,38px); font-weight:900; margin:0 0 40px">Questions fréquentes</h2>
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <div style="padding:24px 0; border-bottom:1px solid rgba(23,26,46,0.08)">
+            <h3 style="font-size:19px; font-weight:800; margin:0 0 8px">Lysomba est-elle gratuite ?</h3>
+            <p style="font-size:16px; line-height:1.6; color:#585E7A; margin:0">Oui. Vous téléchargez l'application et vous créez vos listes, sans compte et sans abonnement.</p>
+          </div>
+          <div style="padding:24px 0; border-bottom:1px solid rgba(23,26,46,0.08)">
+            <h3 style="font-size:19px; font-weight:800; margin:0 0 8px">En quelles langues est l'application ?</h3>
+            <p style="font-size:16px; line-height:1.6; color:#585E7A; margin:0">En français et en anglais. Lysomba suit la langue de votre téléphone, y compris pour les noms de rayons.</p>
+          </div>
+          <div style="padding:24px 0; border-bottom:1px solid rgba(23,26,46,0.08)">
+            <h3 style="font-size:19px; font-weight:800; margin:0 0 8px">Faut-il une connexion en magasin ?</h3>
+            <p style="font-size:16px; line-height:1.6; color:#585E7A; margin:0">Non. Vos listes restent sur votre téléphone et fonctionnent même au fond du rayon surgelés.</p>
+          </div>
+          <div style="padding:24px 0">
+            <h3 style="font-size:19px; font-weight:800; margin:0 0 8px">Et si un article part dans le mauvais rayon ?</h3>
+            <p style="font-size:16px; line-height:1.6; color:#585E7A; margin:0">Vous le reclassez d'un tap, et Lysomba s'en souvient pour la prochaine fois.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <section id="telecharger" style="background:#F5F5FA; background-image:repeating-linear-gradient(90deg, rgba(23,26,46,0.05) 0 1px, transparent 1px 46px); color:#171A2E; border-top:1px solid rgba(23,26,46,0.08)">
+    <div style="max-width:900px; margin:0 auto; padding:100px 28px; text-align:center">
+      <img src="uploads/lysomba_icon_master.png" alt="Lysomba" style="width:78px; height:78px; border-radius:20px; display:block; margin:0 auto 28px; box-shadow:0 20px 40px -16px rgba(23,26,46,0.42)" />
+      <h2 style="font-size:clamp(32px,5.5vw,50px); line-height:1.06; font-weight:900; margin:0 0 18px">Faites vos courses<br /><span style="color:#4B57D8">une seule fois</span></h2>
+      <p style="font-size:19px; line-height:1.6; color:#585E7A; margin:0 auto 36px; max-width:520px">Installez Lysomba, créez votre première liste ce soir, et gagnez vingt minutes samedi matin.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center">
+        <a href="#" style="display:inline-flex; align-items:center; padding:18px 34px; border-radius:16px; background:#4B57D8; color:#fff; font-weight:800; font-size:17px; font-family:'Nunito',sans-serif; box-shadow:0 16px 32px -14px rgba(75,87,216,0.85)" style-hover="background:#3843B8; color:#fff">Télécharger sur Google Play</a>
+        <a href="#" style="display:inline-flex; align-items:center; padding:18px 34px; border-radius:16px; background:#fff; border:1px solid rgba(23,26,46,0.12); color:#3D4260; font-weight:700; font-size:17px; font-family:'Nunito',sans-serif" style-hover="background:#F0F1F9; color:#171A2E">Bientôt sur iOS</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#171A2E; color:rgba(255,255,255,0.6)">
+    <div style="max-width:1180px; margin:0 auto; padding:40px 28px; display:flex; flex-wrap:wrap; align-items:center; gap:20px 32px">
+      <div style="display:flex; align-items:center; gap:12px">
+        <img src="uploads/lysomba_icon_master.png" alt="" style="width:30px; height:30px; border-radius:9px; display:block" />
+        <span class="disp" style="font-size:17px; font-weight:900; color:#fff">Lysomba</span>
+      </div>
+      <span style="font-size:14px">Une application <a href="https://britomyck.github.io/HKB-Labs-site/index.html" target="_blank" rel="noopener" style="color:#B5E619; font-weight:700" style-hover="color:#C8F53A">HKB Labs</a> · © 2026 Lysomba. Tous droits réservés.</span>
+      <div style="margin-left:auto; display:flex; flex-wrap:wrap; gap:14px 26px; font-size:14px">
+        <a href="https://britomyck.github.io/HKB-Labs-site/privacy.html" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6); font-weight:600" style-hover="color:#B5E619">Confidentialité</a>
+        <a href="#" style="color:rgba(255,255,255,0.6); font-weight:600" style-hover="color:#B5E619">Mentions légales</a>
+        <a href="#" style="color:rgba(255,255,255,0.6); font-weight:600" style-hover="color:#B5E619">Contact</a>
+      </div>
+    </div>
+  </footer>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ isEn }}" hint-placeholder-val="{{ false }}">
+  <div>
+  <section style="position:relative; background:#F5F5FA; background-image:repeating-linear-gradient(90deg, rgba(23,26,46,0.05) 0 1px, transparent 1px 46px); color:#171A2E; border-bottom:1px solid rgba(23,26,46,0.08); overflow:hidden">
+    <div style="max-width:1180px; margin:0 auto; padding:88px 28px 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:48px; align-items:end">
+      <div style="padding-bottom:110px; min-width:0">
+        <div style="display:inline-flex; align-items:center; gap:10px; padding:8px 16px 8px 12px; border-radius:999px; background:#fff; border:1px solid rgba(23,26,46,0.09); box-shadow:0 4px 14px -8px rgba(23,26,46,0.3); margin-bottom:26px">
+          <span style="width:8px; height:8px; border-radius:50%; background:#94C40C; display:block"></span>
+          <span style="font-size:13.5px; font-weight:600; letter-spacing:0.01em; color:#3D4260">An <a href="https://britomyck.github.io/HKB-Labs-site/index.html" target="_blank" rel="noopener" style="color:#4B57D8; font-weight:700" style-hover="color:#3843B8">HKB Labs</a> app · Android</span>
+        </div>
+        <h1 style="font-size:clamp(38px,7vw,64px); line-height:1.02; font-weight:900; margin:0 0 22px">Your groceries,<br />sorted <span style="color:#4B57D8">by aisle</span>.</h1>
+        <p style="font-size:20px; line-height:1.55; color:#585E7A; margin:0 0 34px; max-width:480px">Lysomba files every item under the right aisle of your store. One clean walk through the shop, and the total adds itself up as you go.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:14px; margin-bottom:26px">
+          <a href="#download" style="display:inline-flex; align-items:center; gap:12px; padding:17px 30px; border-radius:16px; background:#4B57D8; color:#fff; font-weight:800; font-size:17px; font-family:'Nunito',sans-serif; box-shadow:0 16px 32px -14px rgba(75,87,216,0.85)" style-hover="background:#3843B8; color:#fff">Get it on Google Play</a>
+          <a href="#download" style="display:inline-flex; align-items:center; gap:12px; padding:17px 30px; border-radius:16px; background:#fff; border:1px solid rgba(23,26,46,0.12); color:#3D4260; font-weight:700; font-size:17px; font-family:'Nunito',sans-serif" style-hover="background:#F0F1F9; color:#171A2E">iOS coming soon</a>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px 22px; font-size:14px; font-weight:600; color:#7A8098">
+          <span>Free</span><span style="opacity:0.4">·</span><span>No sign-up</span><span style="opacity:0.4">·</span><span>Works offline</span><span style="opacity:0.4">·</span><span>English &amp; French</span>
+        </div>
+      </div>
+      <div style="position:relative; display:flex; justify-content:center; align-items:flex-end">
+        <div style="position:absolute; bottom:-40px; width:420px; height:420px; border-radius:50%; background:radial-gradient(circle, rgba(75,87,216,0.16), transparent 66%)"></div>
+        <div style="position:absolute; left:-28px; top:96px; z-index:3; background:#fff; color:#171A2E; border-radius:16px; padding:14px 18px; border:1px solid rgba(23,26,46,0.07); box-shadow:0 22px 44px -18px rgba(23,26,46,0.4); animation:floaty 5s ease-in-out infinite">
+          <div style="font-size:11px; font-weight:700; letter-spacing:0.09em; text-transform:uppercase; color:#8A8FA8; margin-bottom:4px">Live total</div>
+          <div class="disp" style="font-size:24px; font-weight:900; color:#4B57D8">45,70 €</div>
+        </div>
+        <img src="assets/screen-rayons.png" alt="Lysomba list sorted by aisle" style="position:relative; z-index:2; width:min(330px,78vw); display:block; border-radius:36px; box-shadow:0 46px 80px -32px rgba(23,26,46,0.5)" />
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#171A2E; color:#fff; padding:26px 28px">
+    <div style="max-width:1180px; margin:0 auto; display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px 40px">
+      <span class="disp" style="font-size:16px; font-weight:700; color:rgba(255,255,255,0.55)">Automatic aisle sorting</span>
+      <span class="disp" style="font-size:16px; font-weight:700; color:rgba(255,255,255,0.55)">Your own stores</span>
+      <span class="disp" style="font-size:16px; font-weight:700; color:rgba(255,255,255,0.55)">Prices &amp; live total</span>
+      <span class="disp" style="font-size:16px; font-weight:700; color:rgba(255,255,255,0.55)">Reusable templates</span>
+      <span class="disp" style="font-size:16px; font-weight:700; color:rgba(255,255,255,0.55)">English &amp; French</span>
+    </div>
+  </section>
+
+  <section id="features" style="max-width:1180px; margin:0 auto; padding:104px 28px 40px">
+    <div style="max-width:640px; margin-bottom:56px">
+      <div style="font-size:12.5px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#4B57D8; margin-bottom:16px">Features</div>
+      <h2 style="font-size:clamp(30px,4.5vw,46px); line-height:1.08; font-weight:900; margin:0 0 18px">Built for the way you actually shop</h2>
+      <p style="font-size:18px; line-height:1.6; color:#585E7A; margin:0">No account to create, no ten-minute tutorial. You add the items, the app files them.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px">
+      <div style="background:#fff; border:1px solid rgba(23,26,46,0.08); border-radius:24px; padding:32px" style-hover="border-color:#4B57D8; transform:translateY(-3px)">
+        <div style="width:44px; height:44px; border-radius:13px; background:#EEF0FE; display:flex; align-items:center; justify-content:center; margin-bottom:22px">
+          <span style="display:block; width:16px; height:9px; border-left:3.5px solid #4B57D8; border-bottom:3.5px solid #4B57D8; transform:rotate(-45deg) translate(1px,-2px)"></span>
+        </div>
+        <h3 style="font-size:21px; font-weight:800; margin:0 0 10px">Every item in its aisle</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#585E7A; margin:0">Produce, butcher, dry goods… your items group themselves in the order of the store.</p>
+      </div>
+      <div style="background:#fff; border:1px solid rgba(23,26,46,0.08); border-radius:24px; padding:32px" style-hover="border-color:#4B57D8; transform:translateY(-3px)">
+        <div style="width:44px; height:44px; border-radius:13px; background:#F2FBDB; display:flex; align-items:center; justify-content:center; margin-bottom:22px">
+          <span class="disp" style="font-size:17px; font-weight:900; color:#6E9105">€</span>
+        </div>
+        <h3 style="font-size:21px; font-weight:800; margin:0 0 10px">Budget under control</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#585E7A; margin:0">Add a price and the total updates with every item — including what is already in the cart.</p>
+      </div>
+      <div style="background:#fff; border:1px solid rgba(23,26,46,0.08); border-radius:24px; padding:32px" style-hover="border-color:#4B57D8; transform:translateY(-3px)">
+        <div style="width:44px; height:44px; border-radius:13px; background:#EEF0FE; display:flex; flex-direction:column; gap:3px; align-items:center; justify-content:center; margin-bottom:22px">
+          <span style="display:block; width:18px; height:3px; border-radius:2px; background:#4B57D8"></span>
+          <span style="display:block; width:18px; height:3px; border-radius:2px; background:#4B57D8"></span>
+          <span style="display:block; width:11px; height:3px; border-radius:2px; background:#B9BEEF"></span>
+        </div>
+        <h3 style="font-size:21px; font-weight:800; margin:0 0 10px">As many lists as you need</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#585E7A; margin:0">Weekly shop, Saturday drinks, the click-and-collect run: each with its own store and total.</p>
+      </div>
+      <div style="background:#fff; border:1px solid rgba(23,26,46,0.08); border-radius:24px; padding:32px" style-hover="border-color:#4B57D8; transform:translateY(-3px)">
+        <div style="width:44px; height:44px; border-radius:13px; background:#F2FBDB; display:flex; align-items:center; justify-content:center; margin-bottom:22px">
+          <span class="disp" style="font-size:13px; font-weight:900; color:#6E9105">EN&nbsp;/&nbsp;FR</span>
+        </div>
+        <h3 style="font-size:21px; font-weight:800; margin:0 0 10px">English and French</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#585E7A; margin:0">The app follows your phone's language: interface and aisle names in English or French.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1180px; margin:0 auto; padding:64px 28px">
+    <div style="background:#F1F2FB; border-radius:36px; padding:64px 28px 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:48px; align-items:end; overflow:hidden">
+      <div style="padding:0 20px 76px 40px; min-width:0">
+        <div style="font-size:12.5px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:#4B57D8; margin-bottom:16px">Your stores</div>
+        <h2 style="font-size:clamp(28px,4.2vw,42px); line-height:1.1; font-weight:900; margin:0 0 20px">Your supermarket isn't laid out like mine</h2>
+        <p style="font-size:17.5px; line-height:1.65; color:#585E7A; margin:0 0 30px">Save your stores and the order of their aisles. Lysomba then sorts your list in the exact order of your route — from the first aisle to the checkout.</p>
+        <div style="display:flex; flex-wrap:wrap; gap:10px">
+          <span style="padding:9px 16px; border-radius:999px; background:#fff; border:1px solid rgba(23,26,46,0.09); font-size:14px; font-weight:600; color:#3D4260">Fruit &amp; Vegetables</span>
+          <span style="padding:9px 16px; border-radius:999px; background:#4B57D8; font-size:14px; font-weight:600; color:#fff">Butcher</span>
+          <span style="padding:9px 16px; border-radius:999px; background:#fff; border:1px solid rgba(23,26,46,0.09); font-size:14px; font-weight:600; color:#3D4260">Dairy</span>
+          <span style="padding:9px 16px; border-radius:999px; background:#fff; border:1px solid rgba(23,26,46,0.09); font-size:14px; font-weight:600; color:#3D4260">Pantry</span>
+          <span style="padding:9px 16px; border-radius:999px; background:#fff; border:1px solid rgba(23,26,46,0.09); font-size:14px; font-weight:600; color:#3D4260">Bakery</span>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:center; align-items:flex-end">
+        <img src="assets/screen-listes.png" alt="Lysomba lists screen" style="width:min(306px,78vw); display:block; border-radius:34px; box-shadow:0 40px 70px -28px rgba(23,26,46,0.42); transform:translateY(6px)" />
+      </div>
+    </div>
+  </section>
+
+  <section id="how" style="max-width:1180px; margin:0 auto; padding:56px 28px 96px">
+    <h2 style="font-size:clamp(28px,4.2vw,42px); font-weight:900; margin:0 0 52px; text-align:center">Three taps and you're shopping</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px">
+      <div style="border-top:3px solid #4B57D8; padding-top:26px">
+        <div class="disp" style="font-size:15px; font-weight:900; color:#4B57D8; margin-bottom:12px">01</div>
+        <h3 style="font-size:22px; font-weight:800; margin:0 0 10px">Create your list</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#585E7A; margin:0">Name it, pick the store, or start from one of your templates.</p>
+      </div>
+      <div style="border-top:3px solid #B5E619; padding-top:26px">
+        <div class="disp" style="font-size:15px; font-weight:900; color:#7E9F10; margin-bottom:12px">02</div>
+        <h3 style="font-size:22px; font-weight:800; margin:0 0 10px">Add your items</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#585E7A; margin:0">Quantity, price if you like. The aisle is guessed as you type.</p>
+      </div>
+      <div style="border-top:3px solid rgba(23,26,46,0.15); padding-top:26px">
+        <div class="disp" style="font-size:15px; font-weight:900; color:#171A2E; margin-bottom:12px">03</div>
+        <h3 style="font-size:22px; font-weight:800; margin:0 0 10px">Tick them off in store</h3>
+        <p style="font-size:15.5px; line-height:1.6; color:#585E7A; margin:0">You follow the aisles in order and the total keeps up.</p>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showFaq }}" hint-placeholder-val="{{ true }}">
+    <section id="faq-en" style="background:#fff; border-top:1px solid rgba(23,26,46,0.07); border-bottom:1px solid rgba(23,26,46,0.07)">
+      <div style="max-width:900px; margin:0 auto; padding:88px 28px">
+        <h2 style="font-size:clamp(27px,4vw,38px); font-weight:900; margin:0 0 40px">Frequently asked questions</h2>
+        <div style="display:flex; flex-direction:column; gap:8px">
+          <div style="padding:24px 0; border-bottom:1px solid rgba(23,26,46,0.08)">
+            <h3 style="font-size:19px; font-weight:800; margin:0 0 8px">Is Lysomba free?</h3>
+            <p style="font-size:16px; line-height:1.6; color:#585E7A; margin:0">Yes. Download the app and build your lists — no account, no subscription.</p>
+          </div>
+          <div style="padding:24px 0; border-bottom:1px solid rgba(23,26,46,0.08)">
+            <h3 style="font-size:19px; font-weight:800; margin:0 0 8px">Which languages does the app support?</h3>
+            <p style="font-size:16px; line-height:1.6; color:#585E7A; margin:0">English and French. Lysomba follows your phone's language, aisle names included.</p>
+          </div>
+          <div style="padding:24px 0; border-bottom:1px solid rgba(23,26,46,0.08)">
+            <h3 style="font-size:19px; font-weight:800; margin:0 0 8px">Do I need a connection in store?</h3>
+            <p style="font-size:16px; line-height:1.6; color:#585E7A; margin:0">No. Your lists stay on your phone and work even at the back of the frozen aisle.</p>
+          </div>
+          <div style="padding:24px 0">
+            <h3 style="font-size:19px; font-weight:800; margin:0 0 8px">What if an item lands in the wrong aisle?</h3>
+            <p style="font-size:16px; line-height:1.6; color:#585E7A; margin:0">Move it with one tap, and Lysomba remembers it for next time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </sc-if>
+
+  <section id="download" style="background:#F5F5FA; background-image:repeating-linear-gradient(90deg, rgba(23,26,46,0.05) 0 1px, transparent 1px 46px); color:#171A2E; border-top:1px solid rgba(23,26,46,0.08)">
+    <div style="max-width:900px; margin:0 auto; padding:100px 28px; text-align:center">
+      <img src="uploads/lysomba_icon_master.png" alt="Lysomba" style="width:78px; height:78px; border-radius:20px; display:block; margin:0 auto 28px; box-shadow:0 20px 40px -16px rgba(23,26,46,0.42)" />
+      <h2 style="font-size:clamp(32px,5.5vw,50px); line-height:1.06; font-weight:900; margin:0 0 18px">Do the shop<br /><span style="color:#4B57D8">in one pass</span></h2>
+      <p style="font-size:19px; line-height:1.6; color:#585E7A; margin:0 auto 36px; max-width:520px">Install Lysomba, build your first list tonight, and win back twenty minutes on Saturday morning.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center">
+        <a href="#" style="display:inline-flex; align-items:center; padding:18px 34px; border-radius:16px; background:#4B57D8; color:#fff; font-weight:800; font-size:17px; font-family:'Nunito',sans-serif; box-shadow:0 16px 32px -14px rgba(75,87,216,0.85)" style-hover="background:#3843B8; color:#fff">Get it on Google Play</a>
+        <a href="#" style="display:inline-flex; align-items:center; padding:18px 34px; border-radius:16px; background:#fff; border:1px solid rgba(23,26,46,0.12); color:#3D4260; font-weight:700; font-size:17px; font-family:'Nunito',sans-serif" style-hover="background:#F0F1F9; color:#171A2E">iOS coming soon</a>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#171A2E; color:rgba(255,255,255,0.6)">
+    <div style="max-width:1180px; margin:0 auto; padding:40px 28px; display:flex; flex-wrap:wrap; align-items:center; gap:20px 32px">
+      <div style="display:flex; align-items:center; gap:12px">
+        <img src="uploads/lysomba_icon_master.png" alt="" style="width:30px; height:30px; border-radius:9px; display:block" />
+        <span class="disp" style="font-size:17px; font-weight:900; color:#fff">Lysomba</span>
+      </div>
+      <span style="font-size:14px">An <a href="https://britomyck.github.io/HKB-Labs-site/index.html" target="_blank" rel="noopener" style="color:#B5E619; font-weight:700" style-hover="color:#C8F53A">HKB Labs</a> app · © 2026 Lysomba. All rights reserved.</span>
+      <div style="margin-left:auto; display:flex; flex-wrap:wrap; gap:14px 26px; font-size:14px">
+        <a href="https://britomyck.github.io/HKB-Labs-site/privacy.html" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.6); font-weight:600" style-hover="color:#B5E619">Privacy</a>
+        <a href="#" style="color:rgba(255,255,255,0.6); font-weight:600" style-hover="color:#B5E619">Legal</a>
+        <a href="#" style="color:rgba(255,255,255,0.6); font-weight:600" style-hover="color:#B5E619">Contact</a>
+      </div>
+    </div>
+  </footer>
+  </div>
+  </sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showFaq&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;fr&quot;,&quot;en&quot;],&quot;default&quot;:&quot;fr&quot;,&quot;tsType&quot;:&quot;'fr' | 'en'&quot;,&quot;section&quot;:&quot;Langue&quot;}}">
+class Component extends DCLogic {
+  state = { lang: null };
+  componentDidMount() {
+    let saved = null;
+    try { saved = localStorage.getItem('lysomba.lang'); } catch (e) {}
+    const nav = (navigator.language || '').toLowerCase();
+    this.setState({ lang: saved || (nav.startsWith('fr') ? 'fr' : (this.props.defaultLang === 'en' ? 'en' : 'fr')) });
+  }
+  setLang(l) {
+    try { localStorage.setItem('lysomba.lang', l); } catch (e) {}
+    this.setState({ lang: l });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  tab(active) {
+    return 'appearance:none; border:0; cursor:pointer; padding:7px 13px; border-radius:999px; font-family:Nunito, sans-serif; font-size:13.5px; font-weight:900; letter-spacing:0.03em; transition:background 0.15s ease;'
+      + (active ? 'background:#4B57D8; color:#fff;' : 'background:transparent; color:#5C6285;');
+  }
+  renderVals() {
+    const lang = this.state.lang || (this.props.defaultLang === 'en' ? 'en' : 'fr');
+    return {
+      isFr: lang === 'fr',
+      isEn: lang === 'en',
+      frTabStyle: this.tab(lang === 'fr'),
+      enTabStyle: this.tab(lang === 'en'),
+      setFr: () => this.setLang('fr'),
+      setEn: () => this.setLang('en'),
+      showFaq: this.props.showFaq ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>

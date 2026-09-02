@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "title": "Lysomba — Your groceries, sorted by aisle",
+    "description": "Lysomba files every item under the right aisle of your store. One clean walk through the shop, and the total adds itself up. Free Android app, no sign-up, works offline."
+  },
+  "nav": {
+    "features": "Features",
+    "how": "How it works",
+    "faq": "FAQ",
+    "download": "Download"
+  },
+  "hero": {
+    "badgePrefix": "An ",
+    "badgeBrand": "HKB Labs",
+    "badgeSuffix": " app · Android",
+    "titleLine1": "Your groceries,",
+    "titleLine2Pre": "sorted ",
+    "titleAccent": "by aisle",
+    "titleLine2Post": ".",
+    "subtitle": "Lysomba files every item under the right aisle of your store. One clean walk through the shop, and the total adds itself up as you go.",
+    "ctaPrimary": "Get it on Google Play",
+    "ctaSecondary": "iOS coming soon",
+    "microList": ["Free", "No sign-up", "Works offline", "English & French"],
+    "floatingLabel": "Live total",
+    "floatingValue": "45,70 €",
+    "screenAlt": "Lysomba list sorted by aisle"
+  },
+  "proof": [
+    "Automatic aisle sorting",
+    "Your own stores",
+    "Prices & live total",
+    "Reusable templates",
+    "English & French"
+  ],
+  "features": {
+    "eyebrow": "Features",
+    "title": "Built for the way you actually shop",
+    "lead": "No account to create, no ten-minute tutorial. You add the items, the app files them.",
+    "cards": [
+      {
+        "icon": "check",
+        "title": "Every item in its aisle",
+        "text": "Produce, butcher, dry goods… your items group themselves in the order of the store."
+      },
+      {
+        "icon": "euro",
+        "title": "Budget under control",
+        "text": "Add a price and the total updates with every item — including what is already in the cart."
+      },
+      {
+        "icon": "bars",
+        "title": "As many lists as you need",
+        "text": "Weekly shop, Saturday drinks, the click-and-collect run: each with its own store and total."
+      },
+      {
+        "icon": "lang",
+        "title": "English and French",
+        "text": "The app follows your phone's language: interface and aisle names in English or French."
+      }
+    ]
+  },
+  "stores": {
+    "eyebrow": "Your stores",
+    "title": "Your supermarket isn't laid out like mine",
+    "lead": "Save your stores and the order of their aisles. Lysomba then sorts your list in the exact order of your route — from the first aisle to the checkout.",
+    "chips": [
+      { "label": "Fruit & Vegetables", "active": false },
+      { "label": "Butcher", "active": true },
+      { "label": "Dairy", "active": false },
+      { "label": "Pantry", "active": false },
+      { "label": "Bakery", "active": false }
+    ],
+    "screenAlt": "Lysomba lists screen"
+  },
+  "steps": {
+    "title": "Three taps and you're shopping",
+    "items": [
+      {
+        "num": "01",
+        "title": "Create your list",
+        "text": "Name it, pick the store, or start from one of your templates."
+      },
+      {
+        "num": "02",
+        "title": "Add your items",
+        "text": "Quantity, price if you like. The aisle is guessed as you type."
+      },
+      {
+        "num": "03",
+        "title": "Tick them off in store",
+        "text": "You follow the aisles in order and the total keeps up."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "q": "Is Lysomba free?",
+        "a": "Yes. Download the app and build your lists — no account, no subscription."
+      },
+      {
+        "q": "Which languages does the app support?",
+        "a": "English and French. Lysomba follows your phone's language, aisle names included."
+      },
+      {
+        "q": "Do I need a connection in store?",
+        "a": "No. Your lists stay on your phone and work even at the back of the frozen aisle."
+      },
+      {
+        "q": "What if an item lands in the wrong aisle?",
+        "a": "Move it with one tap, and Lysomba remembers it for next time."
+      }
+    ]
+  },
+  "downloadCta": {
+    "titleLine1": "Do the shop",
+    "titleAccent": "in one pass",
+    "lead": "Install Lysomba, build your first list tonight, and win back twenty minutes on Saturday morning.",
+    "ctaPrimary": "Get it on Google Play",
+    "ctaSecondary": "iOS coming soon"
+  },
+  "footer": {
+    "madePrefix": "An ",
+    "madeBrand": "HKB Labs",
+    "madeSuffix": " app · © 2026 Lysomba. All rights reserved.",
+    "privacy": "Privacy",
+    "legal": "Legal",
+    "contact": "Contact"
+  }
+}

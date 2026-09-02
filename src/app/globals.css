@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@theme {
+  /* Marque — indigo */
+  --color-indigo: #4b57d8;
+  --color-indigo-dark: #3843b8;
+  --color-indigo-50: #eef0fe;
+  --color-indigo-100: #f1f2fb;
+  --color-indigo-bar: #b9beef;
+
+  /* Marque — lime */
+  --color-lime-brand: #b5e619;
+  --color-lime-hover: #c8f53a;
+  --color-lime-dot: #94c40c;
+  --color-lime-text: #6e9105;
+  --color-lime-text-alt: #7e9f10;
+  --color-lime-50: #f2fbdb;
+
+  /* Encre & neutres */
+  --color-ink: #171a2e;
+  --color-ink-700: #3d4260;
+  --color-ink-600: #585e7a;
+  --color-ink-500: #7a8098;
+  --color-ink-400: #8a8fa8;
+  --color-ink-nav: #4a4f6b;
+  --color-ink-tab: #5c6285;
+
+  /* Fonds */
+  --color-page: #fbfbfd;
+  --color-band: #f5f5fa;
+  --color-hover-light: #f0f1f9;
+
+  --font-display: "Nunito", system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+
+  --shadow-card: 0 4px 14px -8px rgba(23, 26, 46, 0.3);
+  --shadow-pill: 0 8px 20px -8px rgba(75, 87, 216, 0.7);
+  --shadow-cta: 0 16px 32px -14px rgba(75, 87, 216, 0.85);
+  --shadow-float: 0 22px 44px -18px rgba(23, 26, 46, 0.4);
+  --shadow-shot: 0 40px 70px -28px rgba(23, 26, 46, 0.42);
+  --shadow-shot-lg: 0 46px 80px -32px rgba(23, 26, 46, 0.5);
+}
+
+:root {
+  --background: #fbfbfd;
+  --foreground: #171a2e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--color-indigo);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Bandes claires rayées du hero et du CTA final */
+.striped {
+  background-color: var(--color-band);
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(23, 26, 46, 0.05) 0 1px,
+    transparent 1px 46px
+  );
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-floaty {
+  animation: floaty 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-floaty {
+    animation: none;
+  }
+}

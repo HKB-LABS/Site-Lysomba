@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "title": "Lysomba — Vos courses, triées par rayon",
+    "description": "Lysomba classe automatiquement chaque article dans le bon rayon de votre magasin. Un seul passage dans les allées, et le total se calcule tout seul. Application Android gratuite, sans inscription, hors ligne."
+  },
+  "nav": {
+    "features": "Fonctionnalités",
+    "how": "Comment ça marche",
+    "faq": "FAQ",
+    "download": "Télécharger"
+  },
+  "hero": {
+    "badgePrefix": "Une application ",
+    "badgeBrand": "HKB Labs",
+    "badgeSuffix": " · Android",
+    "titleLine1": "Vos courses,",
+    "titleLine2Pre": "triées ",
+    "titleAccent": "par rayon",
+    "titleLine2Post": ".",
+    "subtitle": "Lysomba classe automatiquement chaque article dans le bon rayon de votre magasin. Un seul passage dans les allées, et le total qui se calcule tout seul.",
+    "ctaPrimary": "Télécharger sur Google Play",
+    "ctaSecondary": "Bientôt sur iOS",
+    "microList": ["Gratuit", "Sans inscription", "Hors ligne", "Français & English"],
+    "floatingLabel": "Total en direct",
+    "floatingValue": "45,70 €",
+    "screenAlt": "Liste triée par rayon dans Lysomba"
+  },
+  "proof": [
+    "Tri automatique par rayon",
+    "Magasins personnalisés",
+    "Prix & total en direct",
+    "Modèles réutilisables",
+    "Français & English"
+  ],
+  "features": {
+    "eyebrow": "Fonctionnalités",
+    "title": "Pensée pour la vraie vie du chariot",
+    "lead": "Pas de compte à créer, pas de tutoriel de dix minutes. Vous ajoutez, l'application range.",
+    "cards": [
+      {
+        "icon": "check",
+        "title": "Chaque article à son rayon",
+        "text": "Fruits et légumes, boucherie, épicerie salée… vos articles se regroupent tout seuls dans l'ordre du magasin."
+      },
+      {
+        "icon": "euro",
+        "title": "Le budget sous contrôle",
+        "text": "Notez un prix, et le total se met à jour à chaque article. Vous voyez aussi ce qui est déjà dans le chariot."
+      },
+      {
+        "icon": "bars",
+        "title": "Autant de listes que besoin",
+        "text": "Les courses de la semaine, l'apéro de samedi, la liste du drive : chacune son magasin, chacune son total."
+      },
+      {
+        "icon": "lang",
+        "title": "En français et en anglais",
+        "text": "L'application suit la langue de votre téléphone : interface et noms de rayons en français ou en anglais."
+      }
+    ]
+  },
+  "stores": {
+    "eyebrow": "Vos magasins",
+    "title": "Votre supermarché n'a pas le même plan que le mien",
+    "lead": "Enregistrez vos magasins et l'ordre de leurs rayons. Lysomba trie ensuite votre liste dans l'ordre exact de votre parcours — du premier rayon à la caisse.",
+    "chips": [
+      { "label": "Fruits et Légumes", "active": false },
+      { "label": "Boucherie", "active": true },
+      { "label": "Produits Laitiers", "active": false },
+      { "label": "Épicerie Salée", "active": false },
+      { "label": "Boulangerie", "active": false }
+    ],
+    "screenAlt": "Écran Mes listes de Lysomba"
+  },
+  "steps": {
+    "title": "Trois gestes, et c'est parti",
+    "items": [
+      {
+        "num": "01",
+        "title": "Créez votre liste",
+        "text": "Nommez-la, choisissez le magasin, ou partez d'un de vos modèles."
+      },
+      {
+        "num": "02",
+        "title": "Ajoutez vos articles",
+        "text": "Quantité, prix si vous voulez. Le rayon est deviné à la saisie."
+      },
+      {
+        "num": "03",
+        "title": "Cochez en magasin",
+        "text": "Vous suivez les rayons dans l'ordre, le total se met à jour."
+      }
+    ]
+  },
+  "faq": {
+    "title": "Questions fréquentes",
+    "items": [
+      {
+        "q": "Lysomba est-elle gratuite ?",
+        "a": "Oui. Vous téléchargez l'application et vous créez vos listes, sans compte et sans abonnement."
+      },
+      {
+        "q": "En quelles langues est l'application ?",
+        "a": "En français et en anglais. Lysomba suit la langue de votre téléphone, y compris pour les noms de rayons."
+      },
+      {
+        "q": "Faut-il une connexion en magasin ?",
+        "a": "Non. Vos listes restent sur votre téléphone et fonctionnent même au fond du rayon surgelés."
+      },
+      {
+        "q": "Et si un article part dans le mauvais rayon ?",
+        "a": "Vous le reclassez d'un tap, et Lysomba s'en souvient pour la prochaine fois."
+      }
+    ]
+  },
+  "downloadCta": {
+    "titleLine1": "Faites vos courses",
+    "titleAccent": "une seule fois",
+    "lead": "Installez Lysomba, créez votre première liste ce soir, et gagnez vingt minutes samedi matin.",
+    "ctaPrimary": "Télécharger sur Google Play",
+    "ctaSecondary": "Bientôt sur iOS"
+  },
+  "footer": {
+    "madePrefix": "Une application ",
+    "madeBrand": "HKB Labs",
+    "madeSuffix": " · © 2026 Lysomba. Tous droits réservés.",
+    "privacy": "Confidentialité",
+    "legal": "Mentions légales",
+    "contact": "Contact"
+  }
+}

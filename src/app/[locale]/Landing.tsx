@@ -21,8 +21,8 @@ function GooglePlayButton({
   label: string;
   size?: "md" | "lg";
 }) {
-  const pad = size === "lg" ? "px-[34px] py-[18px]" : "px-[30px] py-[17px]";
-  const cls = `inline-flex items-center justify-center gap-3 rounded-2xl bg-indigo font-display text-[17px] font-extrabold text-white shadow-cta transition-colors hover:bg-indigo-dark ${pad}`;
+  const pad = size === "lg" ? "px-[34px] py-[18px] text-[17px]" : "px-[22px] py-[17px] text-[16px]";
+  const cls = `inline-flex items-center justify-center gap-3 rounded-2xl bg-indigo font-display font-extrabold text-white shadow-cta whitespace-nowrap transition-colors hover:bg-indigo-dark ${pad}`;
   if (PLAY_URL) {
     return (
       <a href={PLAY_URL} target="_blank" rel="noopener" className={cls}>
@@ -49,8 +49,8 @@ function IosButton({
   label: string;
   size?: "md" | "lg";
 }) {
-  const pad = size === "lg" ? "px-[34px] py-[18px]" : "px-[30px] py-[17px]";
-  const cls = `inline-flex items-center justify-center gap-3 rounded-2xl bg-indigo font-display text-[17px] font-extrabold text-white shadow-cta transition-colors hover:bg-indigo-dark ${pad}`;
+  const pad = size === "lg" ? "px-[34px] py-[18px] text-[17px]" : "px-[22px] py-[17px] text-[16px]";
+  const cls = `inline-flex items-center justify-center gap-3 rounded-2xl bg-indigo font-display font-extrabold text-white shadow-cta whitespace-nowrap transition-colors hover:bg-indigo-dark ${pad}`;
   if (APPSTORE_URL) {
     return (
       <a href={APPSTORE_URL} target="_blank" rel="noopener" className={cls}>

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Lysomba — Your groceries, sorted by aisle",
-    "description": "Lysomba files every item under the right aisle of your store. One clean walk through the shop, and the total adds itself up. Free Android app, no sign-up, works offline."
+    "description": "Lysomba files every item under the right aisle of your store. One clean walk through the shop, and the total adds itself up. Free on Android, coming soon to iOS, no sign-up, works offline."
   },
   "nav": {
     "features": "Features",
@@ -12,7 +12,7 @@
   "hero": {
     "badgePrefix": "An ",
     "badgeBrand": "HKB Labs",
-    "badgeSuffix": " app · Android",
+    "badgeSuffix": " app · Android, iOS coming soon",
     "titleLine1": "Your groceries,",
     "titleLine2Pre": "sorted ",
     "titleAccent": "by aisle",
@@ -110,6 +110,10 @@
       {
         "q": "What if an item lands in the wrong aisle?",
         "a": "Move it with one tap, and Lysomba remembers it for next time."
+      },
+      {
+        "q": "Will Lysomba be available on iPhone?",
+        "a": "Yes. Lysomba launches on Android first, and an iOS version is coming soon."
       }
     ]
   },

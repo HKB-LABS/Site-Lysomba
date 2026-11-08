@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Lysomba — Vos courses, triées par rayon",
-    "description": "Lysomba classe automatiquement chaque article dans le bon rayon de votre magasin. Un seul passage dans les allées, et le total se calcule tout seul. Application Android gratuite, sans inscription, hors ligne."
+    "description": "Lysomba classe automatiquement chaque article dans le bon rayon de votre magasin. Un seul passage dans les allées, et le total se calcule tout seul. Application gratuite sur Android, bientôt sur iOS, sans inscription, hors ligne."
   },
   "nav": {
     "features": "Fonctionnalités",
@@ -12,7 +12,7 @@
   "hero": {
     "badgePrefix": "Une application ",
     "badgeBrand": "HKB Labs",
-    "badgeSuffix": " · Android",
+    "badgeSuffix": " · Android, bientôt iOS",
     "titleLine1": "Vos courses,",
     "titleLine2Pre": "triées ",
     "titleAccent": "par rayon",
@@ -110,6 +110,10 @@
       {
         "q": "Et si un article part dans le mauvais rayon ?",
         "a": "Vous le reclassez d'un tap, et Lysomba s'en souvient pour la prochaine fois."
+      },
+      {
+        "q": "Lysomba sera-t-elle disponible sur iPhone ?",
+        "a": "Oui. Lysomba est d'abord disponible sur Android, et une version iOS arrive bientôt."
       }
     ]
   },

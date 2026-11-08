@@ -19,7 +19,7 @@
     "titleLine2Post": ".",
     "subtitle": "Lysomba files every item under the right aisle of your store. One clean walk through the shop, and the total adds itself up as you go.",
     "ctaPrimary": "Get it on Google Play",
-    "ctaSecondary": "iOS coming soon",
+    "ctaSecondary": "Download on the App Store",
     "microList": ["Free", "No sign-up", "Works offline", "English & French"],
     "floatingLabel": "Live total",
     "floatingValue": "45,70 €",
@@ -122,7 +122,7 @@
     "titleAccent": "in one pass",
     "lead": "Install Lysomba, build your first list tonight, and win back twenty minutes on Saturday morning.",
     "ctaPrimary": "Get it on Google Play",
-    "ctaSecondary": "iOS coming soon"
+    "ctaSecondary": "Download on the App Store"
   },
   "footer": {
     "madePrefix": "An ",

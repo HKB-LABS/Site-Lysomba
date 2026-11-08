@@ -50,7 +50,7 @@ function IosButton({
   size?: "md" | "lg";
 }) {
   const pad = size === "lg" ? "px-[34px] py-[18px]" : "px-[30px] py-[17px]";
-  const cls = `inline-flex items-center justify-center gap-3 rounded-2xl border border-[rgba(23,26,46,0.12)] bg-white font-display text-[17px] font-bold text-ink-700 transition-colors hover:bg-hover-light ${pad}`;
+  const cls = `inline-flex items-center justify-center gap-3 rounded-2xl bg-indigo font-display text-[17px] font-extrabold text-white shadow-cta transition-colors hover:bg-indigo-dark ${pad}`;
   if (APPSTORE_URL) {
     return (
       <a href={APPSTORE_URL} target="_blank" rel="noopener" className={cls}>
@@ -59,7 +59,12 @@ function IosButton({
     );
   }
   return (
-    <span className={`${cls} cursor-default`} role="link" aria-disabled="true">
+    <span
+      className={`${cls} cursor-default opacity-90`}
+      role="link"
+      aria-disabled="true"
+      title="Lien disponible à la sortie sur l'App Store"
+    >
       {label}
     </span>
   );
